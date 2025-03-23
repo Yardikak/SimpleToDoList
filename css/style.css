@@ -167,6 +167,52 @@ input[type=text], input[type=date], .btn-submit:focus {
     outline: none;
 }
 
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #dcf8c6;
+    color: #333;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    max-width: 250px;
+    word-wrap: break-word;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+  }
+  
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .toast::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #dcf8c6;
+  }
+  
+  .toast .icon {
+    margin-left: 6px;
+    font-size: 12px;
+    color: #34b7f1; /* Warna centang biru */
+  }
+  
+
 
 @media only screen and (max-width: 1024px) {
     .wrapper {

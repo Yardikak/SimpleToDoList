@@ -26,8 +26,18 @@ function isStorageExist() /* boolean */ {
 
 document.addEventListener(SAVED_EVENT, function () {
     console.log(localStorage.getItem(STORAGE_KEY));
-    console.log('Data berhasil di simpan.');
+    showToast("Data berhasil disimpan!");
 });
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.innerHTML = message + ' <span class="icon">✔✔</span>';
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     const submitForm = document.getElementById('form');
